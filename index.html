@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
@@ -13,10 +15,53 @@
   <div id="root">
     <div id="main_container">
       <div id="main_left">
+        <div class="top_block">
+          <div id="mio_utente">
+            <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png" alt="mio_avatar">
+            <div>Nome Utente</div>
+          </div>
+          <div id="icons_left">
+            <i class="fas fa-circle-notch"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div id="notifiche_blu">
+          <i class="far fa-bell-slash"></i>
+          <div>
+            Ricevi notifiche di nuovi messaggi <br>
+            <a href="#">Attiva notifiche desktop</a>
+          </div>
+        </div>
+        <div id="search_bar">
+          <button type="button" name="button">
+            <i class="fas fa-search"></i>
+          </button>
+          <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+        </div>
+        <div id="chat_aperte">
 
+        </div>
       </div>
       <div id="main_right">
+        <div class="top_block">
+          <div id="utente_destinatario">
+            <img src="https://www.flaticon.com/svg/static/icons/svg/147/147144.svg" alt="">
+            <div>Nome Utente <br>
+            Ultimo accesso oggi alle 10/01/2020 16:15:22</div>
+          </div>
+          <div id="icons_right">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+        <div id="spazio_messaggi">
 
+        </div>
+        <div id="scrivi_messaggio">
+
+        </div>
       </div>
     </div>
   </div>
