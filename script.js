@@ -1,7 +1,6 @@
 var app = new Vue({
     el: '#root',
     data: {
-      textIndex: this.messages.slice(-1).pop(),
 
       contacts: [
       	{
@@ -87,8 +86,8 @@ var app = new Vue({
       			}
       		],
       	},
-      ]
-
+      ],
+      testoX: this.name,
 
     },
     methods: {

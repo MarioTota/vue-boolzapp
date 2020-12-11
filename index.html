@@ -17,8 +17,8 @@
       <div id="main_left">
         <div class="top_block">
           <div id="mio_utente">
-            <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png" alt="mio_avatar">
-            <div>Nome Utente</div>
+            <a href="#"><img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png" alt="mio_avatar"></a>
+            <a href="#"><div>Nome Utente</div></a>
           </div>
           <div class="icons_top">
             <a href="#"><i class="fas fa-circle-notch"></i></a>
@@ -46,8 +46,9 @@
             <div class="anteprima_nome">
               {{ contact.name }}
             </div>
-            <div class="anteprima">
-              {{ contact.messages[textIndex] }}
+            <div v-for="contact in contacts"
+                 class="anteprima">
+              {{ testoX }}
             </div>
           </div>
         </div>
@@ -55,11 +56,13 @@
       <div id="main_right">
         <div class="top_block">
           <div id="utente_destinatario">
-            <img src="https://www.flaticon.com/svg/static/icons/svg/147/147144.svg" alt="">
-            <div id="testo_destinatario">
+            <a href=""><img src="https://www.flaticon.com/svg/static/icons/svg/147/147144.svg" alt=""></a>
+            <a href="#">
+              <div id="testo_destinatario">
               Michele
               <span>Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
-            </div>
+              </div>
+            </a>    
           </div>
           <div class="icons_top">
             <a href="#"><i class="fas fa-search"></i></a>
