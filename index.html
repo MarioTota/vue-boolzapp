@@ -20,15 +20,17 @@
             <img src="https://cdn.iconscout.com/icon/free/png-256/avatar-370-456322.png" alt="mio_avatar">
             <div>Nome Utente</div>
           </div>
-          <div id="icons_left">
-            <i class="fas fa-circle-notch"></i>
-            <i class="fas fa-comment-alt"></i>
-            <i class="fas fa-ellipsis-v"></i>
+          <div class="icons_top">
+            <a href="#"><i class="fas fa-circle-notch"></i></a>
+            <a href="#"><i class="fas fa-comment-alt"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
           </div>
         </div>
         <div id="notifiche_blu">
-          <i class="far fa-bell-slash"></i>
-          <div>
+          <div id="campanella">
+            <i class="far fa-bell-slash"></i>
+          </div>
+          <div id="testo_notifiche">
             Ricevi notifiche di nuovi messaggi <br>
             <a href="#">Attiva notifiche desktop</a>
           </div>
@@ -40,27 +42,38 @@
           <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div id="chat_aperte">
-
+          <div v-for="contact in contacts" class="li">
+            <div class="anteprima_nome">
+              {{ contact.name }}
+            </div>
+            <div class="anteprima">
+              {{ contact.messages[textIndex] }}
+            </div>
+          </div>
         </div>
       </div>
       <div id="main_right">
         <div class="top_block">
           <div id="utente_destinatario">
             <img src="https://www.flaticon.com/svg/static/icons/svg/147/147144.svg" alt="">
-            <div>Nome Utente <br>
-            Ultimo accesso oggi alle 10/01/2020 16:15:22</div>
+            <div id="testo_destinatario">
+              Michele
+              <span>Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
+            </div>
           </div>
-          <div id="icons_right">
-            <i class="fas fa-search"></i>
-            <i class="fas fa-paperclip"></i>
-            <i class="fas fa-ellipsis-v"></i>
+          <div class="icons_top">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-paperclip"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-v"></i></a>
           </div>
         </div>
         <div id="spazio_messaggi">
 
         </div>
         <div id="scrivi_messaggio">
-
+          <a href="#"><i class="far fa-smile"></i></a>
+          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+        <a href="#"><i class="fas fa-microphone"></i></a>
         </div>
       </div>
     </div>
