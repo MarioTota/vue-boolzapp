@@ -42,17 +42,24 @@
           <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
         </div>
         <div id="chat_aperte">
-          <div v-for="contact in contacts" class="li">
-            <div class="anteprima_nome">
-              {{ contact.name }}
-            </div>
-            <div v-for="contact in contacts"
-                 class="anteprima">
-              {{ testoX }}
+          <div v-for="contact,index in contacts"
+          class="li">
+            <img :src="contact.avatar" alt="avatar">
+            <div class="testo_contatti">
+              <div class="nome_contatto">
+                {{ contact.name }}
+              </div>
+              <div class="ultimo_messaggio">
+
+              </div>
+              <div class="data_ultimo_messaggio">
+
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div id="main_right">
         <div class="top_block">
           <div id="utente_destinatario">
@@ -62,7 +69,7 @@
               Michele
               <span>Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
               </div>
-            </a>    
+            </a>
           </div>
           <div class="icons_top">
             <a href="#"><i class="fas fa-search"></i></a>
@@ -71,12 +78,18 @@
           </div>
         </div>
         <div id="spazio_messaggi">
-
+          <div v-for="contatto in contacts"
+              v-for="messaggio in messages"
+              v-for="value,name in messaggio"
+              class="li_message">
+            <!-- {{ contatto.messages }} -->
+            {{ name }}: {{ value }}
+          </div>
         </div>
         <div id="scrivi_messaggio">
           <a href="#"><i class="far fa-smile"></i></a>
           <input type="text" name="" value="" placeholder="Scrivi un messaggio">
-        <a href="#"><i class="fas fa-microphone"></i></a>
+          <a href="#"><i class="fas fa-microphone"></i></a>
         </div>
       </div>
     </div>

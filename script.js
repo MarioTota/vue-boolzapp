@@ -1,7 +1,6 @@
 var app = new Vue({
     el: '#root',
     data: {
-
       contacts: [
       	{
       		name: 'Gigi',
@@ -87,11 +86,10 @@ var app = new Vue({
       		],
       	},
       ],
-      testoX: this.name,
-
     },
     methods: {
-      // arr.slice(-1).pop()
+
+
 
     }
 

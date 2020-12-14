@@ -45,10 +45,6 @@
   height: 100%;
   border-right: 1px solid lightgrey;
 }
-#main_left a {
-  font-size: 11px;
-  color: #6696AF;
-}
 #main_container .top_block img {
   height: 40px;
   padding-left: 7px;
@@ -63,6 +59,8 @@
   font-weight: bold;
   padding-left: 4px;
   font-size: 13px;
+  display: flex;
+  align-items: center;
 }
 #main_left #notifiche_blu {
   width: 100%;
@@ -92,6 +90,10 @@
   font-size: 13px;
   line-height: 15px;
   padding-left: 6px;
+}
+#main_left #testo_notifiche a {
+  color: grey;
+  font-size: 11px;
 }
 
 #main_left #search_bar {
@@ -126,15 +128,37 @@
 }
 #main_left .li {
   width: 100%;
-  height: 12.5%;
-  border: 1px solid #E9EBEB;
+  height: 25%;
+  border-top: 1px solid #E9EBEB;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#main_left .li img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 20px;
+  border-radius: 50%;
+}
+#main_left .li .testo_contatti {
+  padding-bottom: 5%;
+}
+#main_left .li .nome_contatto {
+  font-size: 15px;
+}
+#main_left .li .ultimo_messaggio {
+  font-size: 12px;
+  color: #C4C1C2;
 }
 
 #main_right {
   width: 65%;
   height: 100%;
   background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
-  background-size: cover;
+  background-size: contain;
 }
 #main_right #utente_destinatario {
   display: flex;
@@ -142,11 +166,14 @@
 }
 #main_right #utente_destinatario a {
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 #main_right #testo_destinatario {
   font-size: 13px;
   line-height: 15px;
   padding-left: 10px;
+  color: black;
 }
 #main_right span {
   display: block;
@@ -156,6 +183,11 @@
 #main_right #spazio_messaggi {
   width: 100%;
   height: 84%;
+  padding: 40px 60px;
+  overflow: auto;
+}
+#main_right .li_message {
+  padding: 10px 0;
 }
 #main_right #scrivi_messaggio {
   width: 100%;
@@ -176,4 +208,9 @@
   border: none;
   font-size: 12px;
   padding-left: 12px;
+  border-radius: 3px;
+}
+
+.active {
+  background-color: #E9EBEB;
 }
