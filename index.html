@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.7/dayjs.min.js" integrity="sha512-kZ+x2gdehn6OZMWZSp3Vt5R+v9hQTYEATQwaUfWquhxbvNVAy6IRtYs7asdyxKUTqG0I5ZqBqnzcBrpnHJCAGw==" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
   <title>Document</title>
 </head>
@@ -43,7 +44,8 @@
         </div>
         <div id="chat_aperte">
           <div v-for="contact,index in contacts"
-          class="li">
+          :class="(index == activeContactIndex) ? 'active' :''"
+          @click="setActiveContactIndex(index)" class="li">
             <img :src="contact.avatar" alt="avatar">
             <div class="testo_contatti">
               <div class="nome_contatto">
@@ -63,13 +65,8 @@
       <div id="main_right">
         <div class="top_block">
           <div id="utente_destinatario">
-            <a href=""><img src="https://www.flaticon.com/svg/static/icons/svg/147/147144.svg" alt=""></a>
-            <a href="#">
-              <div id="testo_destinatario">
-              Michele
-              <span>Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
-              </div>
-            </a>
+            <a href="#"><img :src='contacts[activeContactIndex].avatar' alt=""></a>
+            <a href="">{{ contacts[activeContactIndex].name }}</a>
           </div>
           <div class="icons_top">
             <a href="#"><i class="fas fa-search"></i></a>
@@ -78,22 +75,23 @@
           </div>
         </div>
         <div id="spazio_messaggi">
-          <div v-for="contatto in contacts"
-              v-for="messaggio in messages"
-              v-for="value,name in messaggio"
-              class="li_message">
-            <!-- {{ contatto.messages }} -->
-            {{ name }}: {{ value }}
+          <div class="li_message"
+           v-for="message in contacts[activeContactIndex].messages "
+           :class="{'sent': message.status == 'sent', 'received': message.status == 'received'}"
+          >
+            {{ message.text }}
+            <div class="data_messaggio">{{ message.date }}</div>
           </div>
         </div>
         <div id="scrivi_messaggio">
           <a href="#"><i class="far fa-smile"></i></a>
-          <input type="text" name="" value="" placeholder="Scrivi un messaggio">
+          <input type="text" name="" value="" placeholder="Scrivi un messaggio" v-model='newMessage' @keydown.enter="funzioneAggiungi">
           <a href="#"><i class="fas fa-microphone"></i></a>
         </div>
       </div>
     </div>
   </div>
   <script src="script.js" charset="utf-8"></script>
+
 </body>
 </html>

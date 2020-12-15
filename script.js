@@ -86,9 +86,32 @@ var app = new Vue({
       		],
       	},
       ],
+      activeContactIndex: 0,
+      newMessage:''
     },
     methods: {
+      setActiveContactIndex: function(newIndex) {
+        this.activeContactIndex = newIndex;
+      },
+      funzioneAggiungi: function() {
+        var newObj = {
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+          text: this.newMessage,
+          status: 'sent'
+        };
+        this.contacts[this.activeContactIndex].messages.push(newObj);
+        this.newMessage = ''
 
+      // autoRisposta
+      setTimeout(function() {
+        var autoNewObj = {
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+          text: 'ok',
+          status: 'received'
+        };
+        app.contacts[app.activeContactIndex].messages.push(autoNewObj);
+      },1000 )
+      }
 
 
     }

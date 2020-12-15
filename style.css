@@ -128,13 +128,15 @@
 }
 #main_left .li {
   width: 100%;
-  height: 25%;
+  height: 12.5%;
   border-top: 1px solid #E9EBEB;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-
+#main_left .li:hover {
+  background-color: #E9EBEB;
+}
 #main_left .li img {
   width: 50px;
   height: 50px;
@@ -162,18 +164,22 @@
 }
 #main_right #utente_destinatario {
   display: flex;
-  align-items: center;
 }
 #main_right #utente_destinatario a {
   text-decoration: none;
   display: flex;
   align-items: center;
-}
-#main_right #testo_destinatario {
   font-size: 13px;
   line-height: 15px;
   padding-left: 10px;
   color: black;
+}
+#main_right #utente_destinatario img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
 #main_right span {
   display: block;
@@ -185,9 +191,25 @@
   height: 84%;
   padding: 40px 60px;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
-#main_right .li_message {
-  padding: 10px 0;
+#main_right #spazio_messaggi .li_message {
+  padding: 15px 20px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 11px;
+  width: 280px;
+  position: relative;
+}
+.data_messaggio {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: lightgrey;
+  font-size: 8px;
+  padding: 0 6px;
 }
 #main_right #scrivi_messaggio {
   width: 100%;
@@ -213,4 +235,12 @@
 
 .active {
   background-color: #E9EBEB;
+}
+
+.sent {
+  background-color: #D5F9BA;
+}
+.received {
+  background-color: white;
+  align-self: flex-start;
 }
