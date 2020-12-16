@@ -40,23 +40,21 @@
           <button type="button" name="button">
             <i class="fas fa-search"></i>
           </button>
-          <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+          <input placeholder="Cerca o inizia una nuova chat"
+          v-model="searchText" @keyup="filterContacts">
         </div>
         <div id="chat_aperte">
           <div v-for="contact,index in contacts"
           :class="(index == activeContactIndex) ? 'active' :''"
-          @click="setActiveContactIndex(index)" class="li">
-            <img :src="contact.avatar" alt="avatar">
+          @click="setActiveContactIndex(index)"
+          class="li">
+          <img :src="contact.avatar" alt="avatar">
             <div class="testo_contatti">
-              <div class="nome_contatto">
-                {{ contact.name }}
-              </div>
+              <div class="nome_contatto">{{ contact.name }}</div>
               <div class="ultimo_messaggio">
 
               </div>
-              <div class="data_ultimo_messaggio">
-
-              </div>
+              <div class="data_ultimo_messaggio" ></div>
             </div>
           </div>
         </div>
@@ -65,7 +63,9 @@
       <div id="main_right">
         <div class="top_block">
           <div id="utente_destinatario">
-            <a href="#"><img :src='contacts[activeContactIndex].avatar' alt=""></a>
+            <a href="#">
+              <img :src='contacts[activeContactIndex].avatar' alt="">
+            </a>
             <a href="">{{ contacts[activeContactIndex].name }}</a>
           </div>
           <div class="icons_top">

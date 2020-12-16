@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#root',
     data: {
+      searchText:'',
       contacts: [
       	{
       		name: 'Gigi',
@@ -87,30 +88,46 @@ var app = new Vue({
       	},
       ],
       activeContactIndex: 0,
-      newMessage:''
+      newMessage:'',
+      messaggio:''
     },
+
     methods: {
       setActiveContactIndex: function(newIndex) {
         this.activeContactIndex = newIndex;
       },
       funzioneAggiungi: function() {
         var newObj = {
-          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-          text: this.newMessage,
-          status: 'sent'
-        };
-        this.contacts[this.activeContactIndex].messages.push(newObj);
-        this.newMessage = ''
+            date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+            text: this.newMessage,
+            status: 'sent'
+          };
+          this.contacts[this.activeContactIndex].messages.push(newObj);
+          this.newMessage = ''
 
-      // autoRisposta
-      setTimeout(function() {
-        var autoNewObj = {
-          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
-          text: 'ok',
-          status: 'received'
-        };
-        app.contacts[app.activeContactIndex].messages.push(autoNewObj);
-      },1000 )
+
+        // autoRisposta
+        setTimeout(function() {
+          var autoNewObj = {
+            date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
+            text: 'ok',
+            status: 'received'
+          };
+          app.contacts[app.activeContactIndex].messages.push(autoNewObj);
+        },1000 )
+      },
+      filterContacts: function () {
+        console.log("filter");
+        this.contacts.forEach(
+          (element, index) => {
+            console.log(element.name);
+            if(element.name.toLowerCase().includes(this.searchText.toLowerCase())) {
+              element.visible = true;
+            } else {
+              element.visible = false;
+            }
+          }
+        );
       }
 
 
