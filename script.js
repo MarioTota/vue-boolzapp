@@ -1,7 +1,6 @@
 var app = new Vue({
     el: '#root',
     data: {
-      searchText:'',
       contacts: [
       	{
       		name: 'Gigi',
@@ -89,7 +88,7 @@ var app = new Vue({
       ],
       activeContactIndex: 0,
       newMessage:'',
-      messaggio:''
+      searchText:''
     },
 
     methods: {
@@ -117,10 +116,8 @@ var app = new Vue({
         },1000 )
       },
       filterContacts: function () {
-        console.log("filter");
         this.contacts.forEach(
           (element, index) => {
-            console.log(element.name);
             if(element.name.toLowerCase().includes(this.searchText.toLowerCase())) {
               element.visible = true;
             } else {

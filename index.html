@@ -47,13 +47,13 @@
           <div v-for="contact,index in contacts"
           :class="(index == activeContactIndex) ? 'active' :''"
           @click="setActiveContactIndex(index)"
-          class="li">
+          class="li"
+          v-if="contact.visible == true"
+          >
           <img :src="contact.avatar" alt="avatar">
             <div class="testo_contatti">
               <div class="nome_contatto">{{ contact.name }}</div>
-              <div class="ultimo_messaggio">
-
-              </div>
+              <div class="ultimo_messaggio"></div>
               <div class="data_ultimo_messaggio" ></div>
             </div>
           </div>
