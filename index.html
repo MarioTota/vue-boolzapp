@@ -51,11 +51,9 @@
           v-if="contact.visible == true"
           >
           <img :src="contact.avatar" alt="avatar">
-            <div class="testo_contatti">
-              <div class="nome_contatto">{{ contact.name }}</div>
-              <div class="ultimo_messaggio"></div>
-              <div class="data_ultimo_messaggio" ></div>
-            </div>
+          <div class="testo_contatti">
+            <div class="nome_contatto">{{ contact.name }}</div>
+          </div>
           </div>
         </div>
       </div>
@@ -64,7 +62,7 @@
         <div class="top_block">
           <div id="utente_destinatario">
             <a href="#">
-              <img :src='contacts[activeContactIndex].avatar' alt="">
+              <div class="tiziano" :style="{backgroundImage:'url('+ contacts[activeContactIndex].avatar +')'}"></div>
             </a>
             <a href="">{{ contacts[activeContactIndex].name }}</a>
           </div>
@@ -76,7 +74,7 @@
         </div>
         <div id="spazio_messaggi">
           <div class="li_message"
-           v-for="message in contacts[activeContactIndex].messages "
+           v-for="message in contacts[activeContactIndex].messages"
            :class="{'sent': message.status == 'sent', 'received': message.status == 'received'}"
           >
             {{ message.text }}

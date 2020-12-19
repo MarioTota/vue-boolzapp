@@ -101,8 +101,9 @@ var app = new Vue({
             text: this.newMessage,
             status: 'sent'
           };
-          this.contacts[this.activeContactIndex].messages.push(newObj);
-          this.newMessage = ''
+
+        this.contacts[this.activeContactIndex].messages.push(newObj);
+        this.newMessage = ''
 
 
         // autoRisposta
