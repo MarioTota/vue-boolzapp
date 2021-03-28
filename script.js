@@ -48,7 +48,7 @@ var app = new Vue({
       	},
       	{
       		name: 'Madonna',
-      		avatar: 'https://d2u3vvj2lhotug.cloudfront.net/wp-content/uploads/2020/01/Madonna.jpg',
+			avatar: 'https://www.teleclubitalia.it/wp-content/uploads/2020/01/Madonna.jpg',
       		visible: true,
       		messages: [
       			{
